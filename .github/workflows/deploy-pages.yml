@@ -32,7 +32,6 @@ jobs:
           mkdir -p _site
           cp index.html _site/index.html
           cp LaMovida_BrandBook.pdf _site/LaMovida_BrandBook.pdf
-          cp LaMovida_BrandBook.ai _site/LaMovida_BrandBook.ai
           cp -r assets _site/assets
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
