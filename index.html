@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La Movida — Brand Book</title>
+  <meta name="description" content="Manual de identidad visual de La Movida. La infancia nos mueve.">
+  <meta property="og:title" content="La Movida — Brand Book">
+  <meta property="og:description" content="Manual de identidad visual de La Movida. La infancia nos mueve.">
+  <meta property="og:image" content="assets/slides/01.webp">
+  <link rel="icon" href="assets/logo.png">
+  <style>
+    @font-face { font-family: Fredoka; src: url(assets/fonts/Fredoka-Medium.woff2) format('woff2'); font-weight: 500; font-display: swap; }
+    @font-face { font-family: Fredoka; src: url(assets/fonts/Fredoka-SemiBold.woff2) format('woff2'); font-weight: 600; font-display: swap; }
+    @font-face { font-family: Poppins; src: url(assets/fonts/Poppins-Light.woff2) format('woff2'); font-weight: 300; font-display: swap; }
+    @font-face { font-family: Poppins; src: url(assets/fonts/Poppins-Regular.woff2) format('woff2'); font-weight: 400; font-display: swap; }
+    @font-face { font-family: Poppins; src: url(assets/fonts/Poppins-Medium.woff2) format('woff2'); font-weight: 500; font-display: swap; }
+    :root {
+      --paper: #FBF6EF;
+      --ink: #1F2345;
+      --muted: #8A8796;
+      --rule: #E4DACE;
+      --coral: #FF7A59;
+      --blue: #27AAE2;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 300 17px/1.6 Poppins, system-ui, sans-serif;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    .wrap { width: min(1120px, 100% - 32px); margin-inline: auto; }
+
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: color-mix(in srgb, var(--paper) 92%, transparent);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--rule);
+    }
+    header .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    header img { height: 38px; width: auto; }
+    nav { display: flex; gap: 24px; font-size: 14px; font-weight: 400; }
+    nav a:hover { color: var(--coral); }
+
+    .hero > * { min-width: 0; }
+    .hero { display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px; align-items: center; padding: 88px 0 72px; }
+    .eyebrow { font-size: 12px; font-weight: 500; letter-spacing: .3em; text-transform: uppercase; color: var(--coral); }
+    h1, h2 { font-family: Fredoka, sans-serif; font-weight: 600; line-height: 1.05; margin: 0; }
+    h1 { font-size: clamp(40px, 6vw, 68px); margin: 14px 0 18px; }
+    .lead { color: var(--muted); max-width: 30ch; margin: 0 0 32px; }
+    .buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      display: inline-block; padding: 12px 22px; border-radius: 999px;
+      font: 500 15px Fredoka, sans-serif; border: 1.5px solid var(--ink);
+    }
+    .btn.primary { background: var(--ink); color: #fff; }
+    .btn:hover { transform: translateY(-1px); }
+    .slide { border-radius: 14px; box-shadow: 0 1px 0 var(--rule), 0 12px 32px rgba(31, 35, 69, .08); }
+
+    .toc { padding: 48px 0; border-top: 1px solid var(--rule); }
+    .toc ol { list-style: none; margin: 28px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(5, auto); grid-auto-flow: column; column-gap: 48px; }
+    .toc li a { display: flex; gap: 18px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--rule); }
+    .toc li a:hover h3 { color: var(--coral); }
+    .num { font: 600 26px Fredoka, sans-serif; min-width: 40px; }
+    .toc h3 { font: 500 20px Fredoka, sans-serif; margin: 0; }
+    .toc p { margin: 0; font-size: 14px; color: var(--muted); }
+    h2 { font-size: 32px; }
+
+    section.chapter { padding: 56px 0 8px; }
+    .chapter header { position: static; background: none; backdrop-filter: none; border: 0; display: flex; align-items: baseline; gap: 16px; margin-bottom: 24px; }
+    .chapter .stack { display: grid; gap: 28px; }
+
+    footer { margin-top: 88px; padding: 32px 0 48px; border-top: 1px solid var(--rule); font-size: 14px; color: var(--muted); }
+    footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+
+    @media (max-width: 760px) {
+      nav a:not(.dl) { display: none; }
+      .hero { grid-template-columns: 1fr; gap: 36px; padding: 48px 0; }
+      .toc ol { grid-template-columns: 1fr; grid-template-rows: none; grid-auto-flow: row; }
+      .slide { border-radius: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <a href="#top" aria-label="La Movida, inicio"><img src="assets/logo.png" alt="La Movida" width="736" height="471"></a>
+      <nav>
+        <a href="#contenido">Contenido</a>
+        <a class="dl" href="LaMovida_BrandBook.pdf" download>PDF</a>
+        <a class="dl" href="LaMovida_BrandBook.ai" download>Illustrator</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="wrap">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Manual de identidad visual</div>
+        <h1>La infancia nos mueve.</h1>
+        <p class="lead">Lineamientos para usar la marca La Movida con coherencia, alegría y cuidado.</p>
+        <div class="buttons">
+          <a class="btn primary" href="LaMovida_BrandBook.pdf" download>Descargar PDF</a>
+          <a class="btn" href="LaMovida_BrandBook.ai" download>Editable .ai</a>
+        </div>
+      </div>
+      <img class="slide" src="assets/slides/01.webp" width="1600" height="900" alt="Portada del Brand Book de La Movida">
+    </section>
+
+    <section class="toc" id="contenido">
+      <h2>Contenido</h2>
+      <ol>
+        <li><a href="#concepto"><span class="num" style="color:#00D5A2">01</span><div><h3>Concepto</h3><p>Idea, nombre y personalidad de la marca.</p></div></a></li>
+        <li><a href="#planimetria"><span class="num" style="color:#0796F8">02</span><div><h3>Planimetría</h3><p>Retícula, proporciones y construcción.</p></div></a></li>
+        <li><a href="#proteccion"><span class="num" style="color:#ED1B23">03</span><div><h3>Área de protección</h3><p>Espacio de respeto y tamaños mínimos.</p></div></a></li>
+        <li><a href="#paleta"><span class="num" style="color:#FFB100">04</span><div><h3>Paleta de color</h3><p>Colores principales y su significado.</p></div></a></li>
+        <li><a href="#secundarios"><span class="num" style="color:#6D77AA">05</span><div><h3>Colores secundarios</h3><p>Colores de apoyo y proporción de uso.</p></div></a></li>
+        <li><a href="#tipografia"><span class="num" style="color:#00D5A2">06</span><div><h3>Tipografía</h3><p>Familia Fredoka y jerarquías.</p></div></a></li>
+        <li><a href="#iconografia"><span class="num" style="color:#0796F8">07</span><div><h3>Iconografía</h3><p>Sistema de íconos de la campaña.</p></div></a></li>
+        <li><a href="#versiones"><span class="num" style="color:#ED1B23">08</span><div><h3>Versiones</h3><p>Positiva, negativa, monocromo e isotipo.</p></div></a></li>
+        <li><a href="#usos-correctos"><span class="num" style="color:#FFB100">09</span><div><h3>Usos correctos</h3><p>Aplicaciones y fondos permitidos.</p></div></a></li>
+        <li><a href="#usos-incorrectos"><span class="num" style="color:#6D77AA">10</span><div><h3>Usos incorrectos</h3><p>Lo que nunca debemos hacer.</p></div></a></li>
+      </ol>
+    </section>
+
+    <section class="chapter" id="concepto">
+      <header><span class="num" style="color:#00D5A2">01</span><h2>Concepto</h2></header>
+      <div class="stack">
+        <img class="slide" loading="lazy" src="assets/slides/03.webp" width="1600" height="900" alt="Concepto: idea y nombre de la marca">
+        <img class="slide" loading="lazy" src="assets/slides/04.webp" width="1600" height="900" alt="Concepto: personalidad y tono de voz">
+      </div>
+    </section>
+
+    <section class="chapter" id="planimetria">
+      <header><span class="num" style="color:#0796F8">02</span><h2>Planimetría</h2></header>
+      <div class="stack">
+        <img class="slide" loading="lazy" src="assets/slides/05.webp" width="1600" height="900" alt="Planimetría: retícula, proporciones y construcción del logotipo">
+      </div>
+    </section>
+
+    <section class="chapter" id="proteccion">
+      <header><span class="num" style="color:#ED1B23">03</span><h2>Área de protección</h2></header>
+      <div class="stack">
+        <img class="slide" loading="lazy" src="assets/slides/06.webp" width="1600" height="900" alt="Área de protección y tamaños mínimos">
+      </div>
+    </section>
+
+    <section class="chapter" id="paleta">
+      <header><span class="num" style="color:#FFB100">04</span><h2>Paleta de color</h2></header>
+      <div class="stack">
+        <img class="slide" loading="lazy" src="assets/slides/07.webp" width="1600" height="900" alt="Paleta de color principal: Azul Movida, Rojo Crayola, Azul Noche y Crema Papel">
+      </div>
+    </section>
+
+    <section class="chapter" id="secundarios">
+      <header><span class="num" style="color:#6D77AA">05</span><h2>Colores secundarios</h2></header>
+      <div class="stack">
+        <img class="slide" loading="lazy" src="assets/slides/08.webp" width="1600" height="900" alt="Colores secundarios: Verde Juego, Azul Cielo, Amarillo Sol, Lavanda, Coral y Rosa Mejilla">
+      </div>
+    </section>
+
+    <section class="chapter" id="tipografia">
+      <header><span class="num" style="color:#00D5A2">06</span><h2>Tipografía</h2></header>
+      <div class="stack">
+        <img class="slide" loading="lazy" src="assets/slides/09.webp" width="1600" height="900" alt="Tipografía: Fredoka y Poppins">
+        <img class="slide" loading="lazy" src="assets/slides/10.webp" width="1600" height="900" alt="Jerarquías tipográficas">
+      </div>
+    </section>
+
+    <section class="chapter" id="iconografia">
+      <header><span class="num" style="color:#0796F8">07</span><h2>Iconografía</h2></header>
+      <div class="stack">
+        <img class="slide" loading="lazy" src="assets/slides/11.webp" width="1600" height="900" alt="Sistema de íconos de la campaña">
+        <img class="slide" loading="lazy" src="assets/slides/12.webp" width="1600" height="900" alt="Stickers y trazos de crayola">
+      </div>
+    </section>
+
+    <section class="chapter" id="versiones">
+      <header><span class="num" style="color:#ED1B23">08</span><h2>Versiones</h2></header>
+      <div class="stack">
+        <img class="slide" loading="lazy" src="assets/slides/13.webp" width="1600" height="900" alt="Versiones: positiva, negativa, monocromo, sin tagline e isotipo">
+        <img class="slide" loading="lazy" src="assets/slides/14.webp" width="1600" height="900" alt="Logotipo con stickers y trazos">
+      </div>
+    </section>
+
+    <section class="chapter" id="usos-correctos">
+      <header><span class="num" style="color:#FFB100">09</span><h2>Usos correctos</h2></header>
+      <div class="stack">
+        <img class="slide" loading="lazy" src="assets/slides/15.webp" width="1600" height="900" alt="Usos correctos: fondos permitidos">
+      </div>
+    </section>
+
+    <section class="chapter" id="usos-incorrectos">
+      <header><span class="num" style="color:#6D77AA">10</span><h2>Usos incorrectos</h2></header>
+      <div class="stack">
+        <img class="slide" loading="lazy" src="assets/slides/16.webp" width="1600" height="900" alt="Usos incorrectos del logotipo">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>La Movida · La infancia nos mueve · UNICEF</span>
+      <span><a href="LaMovida_BrandBook.pdf" download>PDF</a> &nbsp;·&nbsp; <a href="LaMovida_BrandBook.ai" download>Illustrator</a></span>
+    </div>
+  </footer>
+</body>
+</html>
